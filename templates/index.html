@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Keeper</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="note-box">
+            <div class="header">
+                <h1>Note Keeper</h1>
+                <p>Save your thoughts, ideas, or to-dos!</p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Enter note title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content" id="content" placeholder="Write your note here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <button type="submit">Save Note</button>
+                <a href="/notes/" class="inline-block ml-3 bg-gray-600 px-5 py-2 rounded-md text-white">View Notes</a>
+</form>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
