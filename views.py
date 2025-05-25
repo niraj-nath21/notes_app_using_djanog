@@ -20,3 +20,11 @@ def index(request):
 def notes(request):
     return render(request, 'notes.html')
 
+def notes_list(request):
+    notes = data.objects.all()
+    return render(request, 'notes_list.html', {'notes': notes})
+
+def notes_list(request):
+    notes = data.objects.all()
+    return render(request, 'notes_list.html', {'notes': notes})
+

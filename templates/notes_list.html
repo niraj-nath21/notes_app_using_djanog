@@ -1,0 +1,26 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="{% static 'notes_list_style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Notes</h1>
+
+        <div class="notes-list">
+            {% for note in notes %}
+            <div class="note-card">
+                <h2>{{ note.title }}</h2>
+                <p>{{ note.content }}</p>
+                <small>Created By: {{ note.name }}</small>
+            </div>
+            {% empty %}
+            <p class="no-notes">No notes saved yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
