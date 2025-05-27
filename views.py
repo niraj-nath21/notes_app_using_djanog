@@ -26,5 +26,7 @@ def notes_list(request):
 
 def notes_list(request):
     notes = data.objects.all()
-    return render(request, 'notes_list.html', {'notes': notes})
+    reversed_notes = notes[::-1]  # Reverse the list of notes
+    return render(request, 'notes_list.html', {'reversed_notes': reversed_notes,'notes': notes})
+
 
