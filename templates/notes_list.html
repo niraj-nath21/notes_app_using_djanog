@@ -9,9 +9,22 @@
 </head>
 <body>
     <div class="container">
+        <div class="button-container">
+            <button onclick="location.href='/'" style="
+                padding: 10px 20px;
+                background-color: #eb4f8d;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                font-family: Arial, sans-serif;
+                margin-bottom: 20px;">
+                Back to Add Note
+            </button>
+        </div>
         <h1>Saved Notes</h1>
         <div class="notes-list">
-
             {% for note in reversed_notes %}
             <div class="note-card">
                 <h2>{{ note.title }}</h2>
